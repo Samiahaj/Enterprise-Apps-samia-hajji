@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Evenement Details</title>
+</head>
+<body>
+
+<h1 th:text="${event.titel}"></h1>
+
+<p>
+    <strong>Organisatie:</strong>
+    <span th:text="${event.organisatie}"></span>
+</p>
+
+<p>
+    <strong>Omschrijving:</strong>
+    <span th:text="${event.omschrijving}"></span>
+</p>
+
+<p>
+    <strong>E-mail:</strong>
+    <span th:text="${event.emailContactpersoon}"></span>
+</p>
+
+<p>
+    <strong>Locatie:</strong>
+    <span th:text="${event.locatie.naam}"></span>
+</p>
+
+<p>
+    <strong>Adres:</strong>
+    <span th:text="${event.locatie.adres}"></span>
+</p>
+
+<a href="/">Terug naar overzicht</a>
+
+</body>
+</html>

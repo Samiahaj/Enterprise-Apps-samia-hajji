@@ -16,7 +16,7 @@ public class EventService {
         Location locatie1 = new Location(
                 1L,
                 "Campus Kaai",
-                "Quai des Charbonnages 62, Brussel",
+                "Nijverheidskaai 170,1070 Anderlecht",
                 200
         );
 
