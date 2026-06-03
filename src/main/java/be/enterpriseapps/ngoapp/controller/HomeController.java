@@ -55,6 +55,8 @@ public class HomeController {
             return "new";
         }
 
+        eventService.addEvent(event);
+
         return "redirect:/";
     }
 

@@ -11,7 +11,9 @@ import java.util.List;
 @Service
 public class EventService {
 
-    public List<Event> getEvents() {
+    private final List<Event> events = new ArrayList<>();
+
+    public EventService() {
 
         Location locatie1 = new Location(
                 1L,
@@ -27,7 +29,6 @@ public class EventService {
                 100
         );
 
-        List<Event> events = new ArrayList<>();
 
         events.add(new Event(
                 1L,
@@ -48,9 +49,16 @@ public class EventService {
                 "contact@partner.be",
                 locatie2
         ));
+    }
 
+    public List<Event> getEvents() {
         return events;
 
+    }
+
+    public void addEvent(Event event) {
+        event.setId((long) (events.size() + 1));
+        events.add(event);
     }
     public Event getEventById(Long id) {
 

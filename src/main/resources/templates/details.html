@@ -104,20 +104,24 @@
             <span th:text="${#temporals.format(event.tijdstip, 'dd/MM/yyyy HH:mm')}"></span>
         </p>
 
-        <p>
-            <strong>Locatie:</strong>
-            <span th:text="${event.locatie.naam}"></span>
-        </p>
+        <div th:if="${event.locatie != null}">
 
-        <p>
-            <strong>Adres:</strong>
-            <span th:text="${event.locatie.adres}"></span>
-        </p>
+            <p>
+                <strong>Locatie:</strong>
+                <span th:text="${event.locatie.naam}"></span>
+            </p>
 
-        <p>
-            <strong>Capaciteit:</strong>
-            <span th:text="${event.locatie.capaciteit}"></span>
-        </p>
+            <p>
+                <strong>Adres:</strong>
+                <span th:text="${event.locatie.adres}"></span>
+            </p>
+
+            <p>
+                <strong>Capaciteit:</strong>
+                <span th:text="${event.locatie.capaciteit}"></span>
+            </p>
+
+        </div>
 
         <a class="back-button" href="/">
             Terug naar overzicht
