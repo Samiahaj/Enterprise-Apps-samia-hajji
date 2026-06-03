@@ -1,14 +1,24 @@
 package be.enterpriseapps.ngoapp.model;
 
 import java.time.LocalDateTime;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 
 public class Event {
 
     private Long id;
     private LocalDateTime tijdstip;
+    @NotBlank(message = "Titel is verplicht")
     private String titel;
+
+    @NotBlank(message = "Omschrijving is verplicht")
     private String omschrijving;
+
+    @NotBlank(message = "Organisatie is verplicht")
     private String organisatie;
+
+    @NotBlank(message = "E-mailadres is verplicht")
+    @Email(message = "Geef een geldig e-mailadres in")
     private String emailContactpersoon;
     private Location locatie;
 

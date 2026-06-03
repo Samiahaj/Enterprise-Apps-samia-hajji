@@ -5,6 +5,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import be.enterpriseapps.ngoapp.service.EventService;
 import be.enterpriseapps.ngoapp.model.Event;
 import org.springframework.web.bind.annotation.PathVariable;
+import be.enterpriseapps.ngoapp.model.Event;
+import jakarta.validation.Valid;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class HomeController {
@@ -28,10 +32,32 @@ public class HomeController {
         return "about";
     }
 
+
+
     @GetMapping("/new")
-    public String newEvent() {
+    public String newEvent(Model model) {
+
+        model.addAttribute("event", new Event());
+
         return "new";
     }
+
+    @PostMapping("/new")
+    public String saveEvent(
+            @Valid Event event,
+            BindingResult bindingResult,
+            Model model) {
+
+        if (bindingResult.hasErrors()) {
+
+            model.addAttribute("event", event);
+
+            return "new";
+        }
+
+        return "redirect:/";
+    }
+
     @GetMapping("/details/{id}")
     public String details(@PathVariable Long id, Model model) {
 

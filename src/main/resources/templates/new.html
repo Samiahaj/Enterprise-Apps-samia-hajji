@@ -96,19 +96,39 @@
 
     <div class="form-card">
 
-        <form>
+        <form th:action="@{/new}" th:object="${event}" method="post">
 
             <label>Titel</label>
-            <input type="text">
+            <input type="text" th:field="*{titel}">
+
+            <p style="color:red"
+               th:if="${#fields.hasErrors('titel')}"
+               th:errors="*{titel}">
+            </p>
 
             <label>Omschrijving</label>
-            <textarea></textarea>
+            <textarea th:field="*{omschrijving}"></textarea>
+
+            <p style="color:red"
+               th:if="${#fields.hasErrors('omschrijving')}"
+               th:errors="*{omschrijving}">
+            </p>
 
             <label>Organisatie</label>
-            <input type="text">
+            <input type="text" th:field="*{organisatie}">
+
+            <p style="color:red"
+               th:if="${#fields.hasErrors('organisatie')}"
+               th:errors="*{organisatie}">
+            </p>
 
             <label>E-mailadres contactpersoon</label>
-            <input type="email">
+            <input type="email" th:field="*{emailContactpersoon}">
+
+            <p style="color:red"
+               th:if="${#fields.hasErrors('emailContactpersoon')}"
+               th:errors="*{emailContactpersoon}">
+            </p>
 
             <label>Tijdstip</label>
             <input type="datetime-local">
