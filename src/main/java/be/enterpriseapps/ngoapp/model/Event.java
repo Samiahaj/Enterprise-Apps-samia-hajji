@@ -21,6 +21,7 @@ public class Event {
     @Email(message = "Geef een geldig e-mailadres in")
     private String emailContactpersoon;
     private Location locatie;
+    private String image;
 
 
     public Event() {
@@ -32,7 +33,8 @@ public class Event {
                  String omschrijving,
                  String organisatie,
                  String emailContactpersoon,
-                 Location locatie) {
+                 Location locatie,
+                 String image) {
         this.id = id;
         this.tijdstip = tijdstip;
         this.titel = titel;
@@ -40,9 +42,16 @@ public class Event {
         this.organisatie = organisatie;
         this.emailContactpersoon = emailContactpersoon;
         this.locatie = locatie;
+        this.image = image;
     }
 
+    public String getImage() {
+        return image;
+    }
 
+    public void setImage(String image) {
+        this.image = image;
+    }
     public Long getId() {
         return id;
     }

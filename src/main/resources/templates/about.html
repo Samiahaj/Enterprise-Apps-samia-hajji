@@ -8,20 +8,89 @@
 
         body{
             margin:0;
-            font-family:Arial, sans-serif;
-            background-color:#F8F4EF;
+            font-family:Arial,sans-serif;
+            background:#F7F3FC;
         }
 
-        nav{
-            background-color:#AFC8E8;
-            padding:20px;
+        .navbar{
+
+            width:90%;
+            margin:20px auto;
+
+            background:white;
+
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+
+            padding:20px 40px;
+
+            border-radius:20px;
+
+            box-shadow:0px 10px 30px rgba(0,0,0,0.1);
+
         }
 
-        nav a{
+        .logo{
+
+            display:flex;
+            align-items:center;
+            gap:15px;
+
+        }
+
+        .logo img{
+
+            width:60px;
+
+        }
+
+        .logo h2{
+
+            margin:0;
+            color:#432874;
+            font-size:28px;
+
+        }
+
+        .logo p{
+
+            margin:0;
+            color:#777;
+            font-size:14px;
+
+        }
+
+        .menu{
+
+            display:flex;
+            align-items:center;
+            gap:30px;
+
+        }
+
+        .menu a{
+
             text-decoration:none;
-            color:#3A3A3A;
-            margin-right:20px;
+            color:#2d2145;
             font-weight:bold;
+
+        }
+
+        .button{
+
+            background:linear-gradient(
+                    90deg,
+                    #8A2BE2,
+                    #B04DFF
+            );
+
+            color:white !important;
+
+            padding:15px 25px;
+
+            border-radius:30px;
+
         }
 
         .container{
@@ -49,21 +118,96 @@
             padding:15px;
             margin-top:50px;
         }
+        .about-hero{
+
+            width:90%;
+
+            height:350px;
+
+            margin:auto;
+
+            border-radius:30px;
+
+            background-image:
+                    linear-gradient(
+                            rgba(80,20,130,0.4),
+                            rgba(80,20,130,0.4)
+                    ),
+                    url('/images/hero.jpg');
+
+            background-size:cover;
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+        }
+
+        .about-hero h1{
+
+            color:white;
+
+            font-size:60px;
+
+        }
 
     </style>
 
 </head>
 <body>
 
-<nav>
-    <a href="/">NGO</a>
-    <a href="/new">Nieuw Evenement</a>
-    <a href="/about">Over Ons</a>
-</nav>
+<nav class="navbar">
 
+    <div class="logo">
+
+        <img src="/images/logo.png">
+
+        <div>
+
+            <h2>NGO ANDERLECHT</h2>
+
+            <p>Samen maken we het verschil</p>
+
+        </div>
+
+    </div>
+
+    <div class="menu">
+
+        <a href="/">Home</a>
+
+        <a href="/about">Over ons</a>
+
+        <a href="/contact">Contact</a>
+
+        <a class="button" href="/new">
+            Nieuw evenement
+        </a>
+
+    </div>
+
+</nav>
+<section class="about-hero">
+
+    <h1>
+        Samen bouwen aan een betere toekomst
+    </h1>
+
+</section>
 <div class="container">
 
-    <h1>Over Onze NGO</h1>
+    <h1>
+        Wie zijn wij?
+    </h1>
+
+    <p>
+
+        NGO Anderlecht zet zich dagelijks in voor de gemeenschap.
+        Samen organiseren wij evenementen om mensen dichter bij elkaar te brengen.
+
+    </p>
 
     <h2>Contactgegevens</h2>
 

@@ -37,7 +37,8 @@ public class EventService {
                 "Inzameling van voedsel voor gezinnen.",
                 "NGO Anderlecht",
                 "info@ngo.be",
-                locatie1
+                locatie1,
+                "event1.jpg"
         ));
 
         events.add(new Event(
@@ -47,7 +48,8 @@ public class EventService {
                 "Gemeenschapsactiviteit voor buurtbewoners.",
                 "Partnerorganisatie",
                 "contact@partner.be",
-                locatie2
+                locatie2,
+                "event2.jpg"
         ));
     }
 

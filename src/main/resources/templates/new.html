@@ -8,20 +8,89 @@
 
         body{
             margin:0;
-            font-family:Arial, sans-serif;
-            background-color:#F8F4EF;
+            font-family:Arial,sans-serif;
+            background:#F7F3FC;
         }
 
-        nav{
-            background-color:#AFC8E8;
-            padding:20px;
+        .navbar{
+
+            width:90%;
+            margin:20px auto;
+
+            background:white;
+
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+
+            padding:20px 40px;
+
+            border-radius:20px;
+
+            box-shadow:0px 10px 30px rgba(0,0,0,0.1);
+
         }
 
-        nav a{
+        .logo{
+
+            display:flex;
+            align-items:center;
+            gap:15px;
+
+        }
+
+        .logo img{
+
+            width:60px;
+
+        }
+
+        .logo h2{
+
+            margin:0;
+            color:#432874;
+            font-size:28px;
+
+        }
+
+        .logo p{
+
+            margin:0;
+            color:#777;
+            font-size:14px;
+
+        }
+
+        .menu{
+
+            display:flex;
+            align-items:center;
+            gap:30px;
+
+        }
+
+        .menu a{
+
             text-decoration:none;
-            color:#3A3A3A;
-            margin-right:20px;
+            color:#2d2145;
             font-weight:bold;
+
+        }
+
+        .button{
+
+            background:linear-gradient(
+                    90deg,
+                    #8A2BE2,
+                    #B04DFF
+            );
+
+            color:white !important;
+
+            padding:15px 25px;
+
+            border-radius:30px;
+
         }
 
         .container{
@@ -39,6 +108,9 @@
             padding:30px;
             border-radius:10px;
             box-shadow:0 0 10px rgba(0,0,0,0.1);
+            border-radius:25px;
+
+            box-shadow:0px 15px 35px rgba(0,0,0,0.1);
         }
 
         label{
@@ -63,13 +135,25 @@
         }
 
         button{
-            margin-top:20px;
-            background-color:#AFC8E8;
+
+            background:linear-gradient(
+                    90deg,
+                    #8A2BE2,
+                    #B04DFF
+            );
+
+            color:white;
+
+            padding:18px;
+
+            width:100%;
+
             border:none;
-            padding:12px 20px;
-            border-radius:5px;
-            cursor:pointer;
-            font-weight:bold;
+
+            border-radius:30px;
+
+            font-size:18px;
+
         }
 
         footer{
@@ -84,15 +168,43 @@
 </head>
 <body>
 
-<nav>
-    <a href="/">NGO</a>
-    <a href="/new">Nieuw Evenement</a>
-    <a href="/about">Over Ons</a>
+<nav class="navbar">
+
+    <div class="logo">
+
+        <img src="/images/logo.png">
+
+        <div>
+
+            <h2>NGO ANDERLECHT</h2>
+
+            <p>Samen maken we het verschil</p>
+
+        </div>
+
+    </div>
+
+    <div class="menu">
+
+        <a href="/">Home</a>
+
+        <a href="/about">Over ons</a>
+
+        <a href="/contact">Contact</a>
+
+        <a class="button" href="/new">
+            Nieuw evenement
+        </a>
+
+    </div>
+
 </nav>
 
 <div class="container">
 
-    <h1>Nieuw Evenement Toevoegen</h1>
+    <h1>
+        Maak een nieuw evenement aan
+    </h1>
 
     <div class="form-card">
 
