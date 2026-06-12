@@ -9,6 +9,7 @@ import be.enterpriseapps.ngoapp.model.Event;
 import jakarta.validation.Valid;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
+import be.enterpriseapps.ngoapp.model.ContactForm;
 
 @Controller
 public class HomeController {
@@ -33,7 +34,9 @@ public class HomeController {
     }
 
     @GetMapping("/contact")
-    public String contact(){
+    public String contact(Model model){
+
+        model.addAttribute("contactForm", new ContactForm());
 
         return "contact";
 

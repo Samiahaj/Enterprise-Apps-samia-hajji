@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Contact</title>
@@ -302,29 +302,31 @@
 
     <div class="right">
 
-        <form>
 
-            <input
-                    type="text"
-                    placeholder="Naam">
+            <form th:action="@{/contact}"
+                  th:object="${contactForm}"
+                  method="post">
 
-            <input
-                    type="email"
-                    placeholder="E-mailadres">
+                <input
+                        type="text"
+                        th:field="*{naam}"
+                        placeholder="Naam">
 
-            <textarea
-                    placeholder="Typ hier je bericht">
+                <input
+                        type="email"
+                        th:field="*{email}"
+                        placeholder="E-mailadres">
 
-            </textarea>
+                <textarea
+                        th:field="*{bericht}"
+                        placeholder="Typ hier je bericht">
+    </textarea>
 
-            <button>
+                <button type="submit">
+                    Verstuur bericht
+                </button>
 
-                Verstuur bericht
-
-            </button>
-
-        </form>
-
+            </form>
     </div>
 
 </section>
