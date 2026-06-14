@@ -36,7 +36,18 @@ De applicatie is ontwikkeld met Java en Spring Boot.
 Tijdens het maken van dit project heb ik gebruik gemaakt van de officiële Spring Boot documentatie en W3Schools.
 
 ---
+## Mogelijke uitbreidingen
 
+Als ik meer tijd had, zou ik graag nog enkele extra functionaliteiten toevoegen:
+
+- Automatisch oude evenementen verbergen of verwijderen.
+- Afbeeldingen uploaden bij het aanmaken van een nieuw evenement.
+- Evenementen bewerken en verwijderen.
+- De gegevens opslaan in een echte databank in plaats van een lijst.
+- Een zoekfunctie of filters toevoegen voor evenementen.
+- Een betere bevestigingspagina na het versturen van een contactbericht.
+
+---
 ## Gebruik van AI
 
 AI werd gebruikt als hulpmiddel voor de structuur van het project.
