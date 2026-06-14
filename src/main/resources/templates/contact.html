@@ -301,7 +301,19 @@
     </div>
 
     <div class="right">
+        <div th:if="${param.success}"
+             style="
+     background:#d4edda;
+     color:#155724;
+     padding:15px;
+     border-radius:15px;
+     margin-bottom:20px;
+     text-align:center;
+     font-weight:bold;">
 
+            ✓ E-mail succesvol verstuurd!
+
+        </div>
 
             <form th:action="@{/contact}"
                   th:object="${contactForm}"
@@ -312,15 +324,30 @@
                         th:field="*{naam}"
                         placeholder="Naam">
 
+                <p style="color:red"
+                   th:if="${#fields.hasErrors('naam')}"
+                   th:errors="*{naam}">
+                </p>
+
                 <input
                         type="email"
                         th:field="*{email}"
                         placeholder="E-mailadres">
 
+                <p style="color:red"
+                   th:if="${#fields.hasErrors('email')}"
+                   th:errors="*{email}">
+                </p>
+
                 <textarea
                         th:field="*{bericht}"
                         placeholder="Typ hier je bericht">
-    </textarea>
+</textarea>
+
+                <p style="color:red"
+                   th:if="${#fields.hasErrors('bericht')}"
+                   th:errors="*{bericht}">
+                </p>
 
                 <button type="submit">
                     Verstuur bericht

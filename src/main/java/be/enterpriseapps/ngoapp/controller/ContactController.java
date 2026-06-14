@@ -7,6 +7,8 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
+import org.springframework.validation.BindingResult;
 
 @Controller
 public class ContactController {
@@ -16,7 +18,17 @@ public class ContactController {
 
 
     @PostMapping("/contact")
-    public String sendMail(@ModelAttribute ContactForm contactForm) {
+    public String sendMail(
+            @Valid @ModelAttribute ContactForm contactForm,
+            BindingResult bindingResult,
+            Model model) {
+
+        if(bindingResult.hasErrors()){
+
+            model.addAttribute("contactForm", contactForm);
+
+            return "contact";
+        }
 
         SimpleMailMessage message = new SimpleMailMessage();
 
@@ -33,6 +45,6 @@ public class ContactController {
 
         mailSender.send(message);
 
-        return "redirect:/contact";
+        return "redirect:/contact?success";
     }
 }

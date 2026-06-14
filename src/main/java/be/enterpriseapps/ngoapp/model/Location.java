@@ -1,10 +1,16 @@
 package be.enterpriseapps.ngoapp.model;
-
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
     public class Location {
 
         private Long id;
+        @NotBlank(message = "Naam van de locatie is verplicht")
         private String naam;
+
+        @NotBlank(message = "Adres is verplicht")
         private String adres;
+
+        @Min(value = 1, message = "Capaciteit moet minstens 1 zijn")
         private int capaciteit;
 
         public Location() {

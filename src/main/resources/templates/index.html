@@ -491,7 +491,19 @@
     <h1 class="section-title">
         Onze evenementen
     </h1>
+    <div th:if="${param.success}"
+         style="
+     background:#d4edda;
+     color:#155724;
+     padding:15px;
+     border-radius:15px;
+     margin-bottom:20px;
+     text-align:center;
+     font-weight:bold;">
 
+        ✓ Nieuw evenement succesvol aangemaakt!
+
+    </div>
     <table class="event-table">
 
         <tr>

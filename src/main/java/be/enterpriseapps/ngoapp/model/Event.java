@@ -3,10 +3,12 @@ package be.enterpriseapps.ngoapp.model;
 import java.time.LocalDateTime;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.FutureOrPresent;
 
 public class Event {
 
     private Long id;
+    @FutureOrPresent(message = "De datum mag niet in het verleden liggen")
     private LocalDateTime tijdstip;
     @NotBlank(message = "Titel is verplicht")
     private String titel;
@@ -20,7 +22,8 @@ public class Event {
     @NotBlank(message = "E-mailadres is verplicht")
     @Email(message = "Geef een geldig e-mailadres in")
     private String emailContactpersoon;
-    private Location locatie;
+    @jakarta.validation.Valid
+    private Location locatie = new Location();
     private String image;
 
 

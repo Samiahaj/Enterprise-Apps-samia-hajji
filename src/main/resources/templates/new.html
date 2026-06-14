@@ -351,16 +351,38 @@
             </p>
 
             <label>Tijdstip</label>
-            <input type="datetime-local">
+            <input type="datetime-local" th:field="*{tijdstip}">
+
+            <p style="color:red"
+               th:if="${#fields.hasErrors('tijdstip')}"
+               th:errors="*{tijdstip}">
+            </p>
 
             <label>Naam locatie</label>
-            <input type="text">
+            <input type="text" th:field="*{locatie.naam}">
+
+            <p style="color:red"
+               th:if="${#fields.hasErrors('locatie.naam')}"
+               th:errors="*{locatie.naam}">
+            </p>
 
             <label>Adres locatie</label>
-            <input type="text">
+            <input type="text" th:field="*{locatie.adres}">
+
+            <p style="color:red"
+               th:if="${#fields.hasErrors('locatie.adres')}"
+               th:errors="*{locatie.adres}">
+            </p>
 
             <label>Capaciteit</label>
-            <input type="number" min="1">
+            <input type="number"
+                   min="1"
+                   th:field="*{locatie.capaciteit}">
+
+            <p style="color:red"
+               th:if="${#fields.hasErrors('locatie.capaciteit')}"
+               th:errors="*{locatie.capaciteit}">
+            </p>
 
             <button type="submit">
                 Evenement Toevoegen

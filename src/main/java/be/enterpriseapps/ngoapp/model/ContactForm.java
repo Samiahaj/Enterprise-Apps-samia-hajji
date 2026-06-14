@@ -1,9 +1,16 @@
 package be.enterpriseapps.ngoapp.model;
-
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 
 public class ContactForm {
+    @NotBlank(message = "Naam is verplicht")
     private String naam;
+
+    @NotBlank(message = "E-mailadres is verplicht")
+    @Email(message = "Geef een geldig e-mailadres in")
     private String email;
+
+    @NotBlank(message = "Bericht is verplicht")
     private String bericht;
 
     public String getNaam() {

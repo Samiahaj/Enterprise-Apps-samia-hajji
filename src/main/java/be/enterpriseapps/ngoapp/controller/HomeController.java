@@ -10,6 +10,7 @@ import jakarta.validation.Valid;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import be.enterpriseapps.ngoapp.model.ContactForm;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Controller
 public class HomeController {
@@ -65,7 +66,7 @@ public class HomeController {
 
         eventService.addEvent(event);
 
-        return "redirect:/";
+        return "redirect:/?success";
     }
 
     @GetMapping("/details/{id}")
