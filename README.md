@@ -31,13 +31,6 @@ De applicatie is ontwikkeld met Java en Spring Boot.
 
 ---
 
-## Gebruikte libraries en frameworks
-
-* Spring Boot
-* Thymeleaf
-
----
-
 ## Gebruikte documentatie
 
 Tijdens het maken van dit project heb ik gebruik gemaakt van de officiële Spring Boot documentatie en W3Schools.
