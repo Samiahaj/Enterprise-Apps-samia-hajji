@@ -11,6 +11,7 @@ De applicatie is ontwikkeld met Java en Spring Boot.
 - Overzicht van de laatste evenementen
 - Details bekijken van een evenement
 - Een nieuw evenement toevoegen
+- Een evenement verwijderen
 - Controle van verplichte velden
 - Controle van een geldig e-mailadres
 - Contactformulier met Mailtrap
@@ -41,7 +42,8 @@ Als ik meer tijd had, zou ik graag nog enkele extra functionaliteiten toevoegen:
 
 ## Gebruik van AI
 
-AI werd gebruikt als hulpmiddel voor de structuur van het project.
+AI werd gebruikt als hulpmiddel voor de structuur van het project en om mij te ondersteunen tijdens de verschillende stappen van de ontwikkeling. 
+Het hielp mij bij het begrijpen van bepaalde concepten en het oplossen van technische problemen.
 
 De afbeeldingen op de website werden met behulp van AI gegenereerd.
 
