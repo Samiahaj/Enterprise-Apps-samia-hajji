@@ -35,7 +35,6 @@ Tijdens het maken van dit project heb ik gebruik gemaakt van de officiële Sprin
 Als ik meer tijd had, zou ik graag nog enkele extra functionaliteiten toevoegen:
 
 
-- Afbeeldingen uploaden bij het aanmaken van een nieuw evenement.
 - Evenementen bewerken.
 - De gegevens opslaan in een echte databank in plaats van een lijst.
 - Een zoekfunctie of filters toevoegen voor evenementen.

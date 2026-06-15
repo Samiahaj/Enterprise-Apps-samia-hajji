@@ -316,7 +316,10 @@
 
     <div class="form-card">
 
-        <form th:action="@{/new}" th:object="${event}" method="post">
+        <form th:action="@{/new}"
+              th:object="${event}"
+              method="post"
+              enctype="multipart/form-data">
 
             <label>Titel</label>
             <input type="text" th:field="*{titel}">
@@ -374,6 +377,10 @@
                th:errors="*{locatie.adres}">
             </p>
 
+            <label>Afbeelding (optioneel)</label>
+
+            <input type="file" name="file">
+
             <label>Capaciteit</label>
             <input type="number"
                    min="1"
@@ -383,6 +390,8 @@
                th:if="${#fields.hasErrors('locatie.capaciteit')}"
                th:errors="*{locatie.capaciteit}">
             </p>
+
+
 
             <button type="submit">
                 Evenement Toevoegen

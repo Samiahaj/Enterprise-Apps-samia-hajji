@@ -11,6 +11,12 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import be.enterpriseapps.ngoapp.model.ContactForm;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.bind.annotation.RequestParam;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 @Controller
 public class HomeController {
@@ -55,6 +61,7 @@ public class HomeController {
     public String saveEvent(
             @Valid Event event,
             BindingResult bindingResult,
+            @RequestParam("file") MultipartFile file,
             Model model) {
 
         if (bindingResult.hasErrors()) {
@@ -63,7 +70,35 @@ public class HomeController {
 
             return "new";
         }
+        if(!file.isEmpty()){
 
+            try{
+
+                String fileName = file.getOriginalFilename();
+
+                Path uploadPath = Paths.get(
+                        "src/main/resources/static/images"
+                );
+
+                if(!Files.exists(uploadPath)){
+                    Files.createDirectories(uploadPath);
+                }
+
+                Files.copy(
+                        file.getInputStream(),
+                        uploadPath.resolve(fileName),
+                        StandardCopyOption.REPLACE_EXISTING
+                );
+
+                event.setImage(fileName);
+
+            }catch(Exception e){
+
+                e.printStackTrace();
+
+            }
+
+        }
         eventService.addEvent(event);
 
         return "redirect:/?success";
