@@ -151,4 +151,11 @@ public class EventService {
                 .findFirst()
                 .orElse(null);
     }
+    public void deleteEvent(Long id){
+
+        events.removeIf(
+                event -> event.getId().equals(id)
+        );
+
+    }
 }

@@ -78,4 +78,12 @@ public class HomeController {
 
         return "details";
     }
+    @GetMapping("/delete/{id}")
+    public String deleteEvent(
+            @PathVariable Long id){
+
+        eventService.deleteEvent(id);
+
+        return "redirect:/";
+    }
 }

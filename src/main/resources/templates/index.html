@@ -180,7 +180,15 @@
             color:#E8C7FF;
 
         }
+        .delete-button{
 
+            color:red;
+
+            font-weight:bold;
+
+            text-decoration:none;
+
+        }
         .hero p{
 
             color:white;
@@ -512,7 +520,9 @@
 
             <th>Organisatie</th>
 
+
             <th>Details</th>
+            <th>Verwijderen</th>
 
         </tr>
 
@@ -528,6 +538,17 @@
                    th:href="@{/details/{id}(id=${event.id})}">
 
                     Details
+
+                </a>
+
+            </td>
+            <td>
+
+                <a class="delete-button"
+                   th:href="@{/delete/{id}(id=${event.id})}"
+                   onclick="return confirm('Weet je zeker dat je dit evenement wil verwijderen?')">
+
+                    Verwijderen
 
                 </a>
 
